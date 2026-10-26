@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Countdown Poster Generator</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Bebas Neue & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;900&family=Oswald:wght@700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
-    .font-montserrat { font-family: 'Montserrat', sans-serif; }
-    .font-poppins { font-family: 'Poppins', sans-serif; }
-    .font-oswald { font-family: 'Oswald', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
   </style>
 </head>
@@ -22,13 +22,13 @@
     <!-- Header -->
     <header class="mb-8 text-center sm:text-left border-b border-slate-800 pb-5 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#fcc70b] font-bebas tracking-wide">
           Countdown Poster Generator
         </h1>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">Kira baki hari, tindih pada reka bentuk Canva & terus download untuk blast.</p>
+        <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Font Bebas Neue • Warna #fcc70b • Sasaran 5 Disember 2026</p>
       </div>
       <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full text-xs text-slate-300">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#fcc70b] animate-pulse"></span>
         GitHub Pages Ready
       </div>
     </header>
@@ -36,47 +36,45 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- Panel Kiri: Tetapan & Kawalan -->
-      <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-6">
+      <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-5">
         
         <!-- 1. Muat Naik Poster Canva -->
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Poster Asas Canva (PNG / JPG)</label>
-          <div class="flex items-center gap-3">
-            <input type="file" id="posterUpload" accept="image/*" class="hidden">
-            <button onclick="document.getElementById('posterUpload').click()" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 border border-dashed border-slate-600 rounded-xl text-sm font-medium transition flex items-center justify-center gap-2 text-slate-200">
-              <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              Upload Poster dari Device
-            </button>
-          </div>
-          <p id="fileName" class="text-[11px] text-slate-500 mt-1.5 truncate">Menggunakan templat demo (atau upload design Canva anda tanpa nombor).</p>
+        <div class="space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">1. Poster Canva (Kosongkan Nombor Hari)</label>
+          <input type="file" id="posterUpload" accept="image/*" class="hidden">
+          <button onclick="document.getElementById('posterUpload').click()" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 border border-dashed border-slate-600 rounded-xl text-sm font-medium transition flex items-center justify-center gap-2 text-slate-200">
+            <svg class="w-4 h-4 text-[#fcc70b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Muat Naik Poster dari Device
+          </button>
+          <p id="fileName" class="text-[11px] text-slate-500 truncate">Menggunakan poster pratonton lalai.</p>
         </div>
 
         <!-- 2. Tetapan Tarikh -->
         <div class="space-y-3 pt-3 border-t border-slate-800">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">2. Kiraan Hari</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">2. Kiraan Tarikh</label>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <span class="text-xs text-slate-400 block mb-1">Tarikh Mula / Harini:</span>
-              <input type="date" id="startDate" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-teal-500">
+              <input type="date" id="startDate" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
             </div>
             <div>
               <span class="text-xs text-slate-400 block mb-1">Tarikh Akhir (Due):</span>
-              <input type="date" id="targetDate" value="2026-12-05" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-teal-500">
+              <input type="date" id="targetDate" value="2026-12-05" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
             </div>
           </div>
 
           <div class="flex items-center justify-between pt-1">
-            <button onclick="setTodayDate()" class="text-xs text-teal-400 hover:text-teal-300 underline font-medium">Set ke Hari Ini</button>
+            <button onclick="setTodayDate()" class="text-xs text-[#fcc70b] hover:underline font-semibold">Set ke Hari Ini</button>
             <div class="text-xs text-slate-300 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">
-              Baki: <span id="daysCountBadge" class="font-bold text-teal-400">0</span> Hari
+              Baki: <span id="daysCountBadge" class="font-bold text-[#fcc70b] font-bebas text-base">0</span> Hari
             </div>
           </div>
         </div>
 
-        <!-- 3. Format & Kedudukan Teks -->
+        <!-- 3. Format Nombor & Kedudukan -->
         <div class="space-y-4 pt-3 border-t border-slate-800">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">3. Kedudukan & Rupa Nombor</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">3. Kedudukan & Saiz Nombor</label>
           
           <!-- Slider Kedudukan -->
           <div class="space-y-2">
@@ -84,317 +82,46 @@
               <span>Posisi Mendatar (X)</span>
               <span id="posXVal">50%</span>
             </div>
-            <input type="range" id="posX" min="0" max="100" value="50" class="w-full accent-teal-400">
+            <input type="range" id="posX" min="0" max="100" value="50" class="w-full accent-[#fcc70b]">
 
             <div class="flex justify-between text-xs text-slate-400 pt-1">
               <span>Posisi Menegak (Y)</span>
               <span id="posYVal">52%</span>
             </div>
-            <input type="range" id="posY" min="0" max="100" value="52" class="w-full accent-teal-400">
+            <input type="range" id="posY" min="0" max="100" value="52" class="w-full accent-[#fcc70b]">
           </div>
 
-          <!-- Format Tipografi -->
+          <!-- Saiz Font & Warna -->
           <div class="grid grid-cols-2 gap-3 pt-2">
             <div>
-              <span class="text-xs text-slate-400 block mb-1">Font</span>
-              <select id="fontSelect" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-2 text-xs text-slate-200">
-                <option value="Bebas Neue">Bebas Neue</option>
-                <option value="Montserrat" selected>Montserrat</option>
-                <option value="Poppins">Poppins</option>
-                <option value="Oswald">Oswald</option>
-                <option value="Inter">Inter</option>
-              </select>
+              <div class="flex justify-between text-xs text-slate-400 mb-1">
+                <span>Saiz Teks</span>
+                <span id="fontSizeVal">110px</span>
+              </div>
+              <input type="range" id="fontSize" min="20" max="250" value="110" class="w-full accent-[#fcc70b]">
             </div>
             <div>
               <span class="text-xs text-slate-400 block mb-1">Warna Angka</span>
               <div class="flex items-center gap-2">
-                <input type="color" id="textColor" value="#ffffff" class="w-9 h-9 rounded cursor-pointer bg-transparent border-0">
-                <span id="colorHex" class="text-xs font-mono text-slate-300 uppercase">#FFFFFF</span>
+                <input type="color" id="textColor" value="#fcc70b" class="w-9 h-8 rounded cursor-pointer bg-transparent border-0">
+                <span id="colorHex" class="text-xs font-mono font-bold text-[#fcc70b] uppercase">#FCC70B</span>
               </div>
             </div>
           </div>
 
-          <div class="space-y-1">
-            <div class="flex justify-between text-xs text-slate-400">
-              <span>Saiz Teks</span>
-              <span id="fontSizeVal">90px</span>
-            </div>
-            <input type="range" id="fontSize" min="20" max="250" value="90" class="w-full accent-teal-400">
-          </div>
-
           <div class="flex items-center gap-4 text-xs text-slate-300">
             <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" id="addPrefix" checked class="accent-teal-400">
-              <span>Sertakan perkataan "HARI" (cth: HARI 40)</span>
+              <input type="checkbox" id="addPrefix" class="accent-[#fcc70b]">
+              <span>Sertakan teks "HARI" di depan</span>
             </label>
           </div>
         </div>
 
         <!-- Butang Eksport -->
         <div class="pt-4 border-t border-slate-800 space-y-2.5">
-          <button id="downloadBtn" onclick="downloadPoster()" class="w-full py-3 px-4 bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-400 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-teal-500/20 transition flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            Download Poster (PNG)
+          <button id="downloadBtn" onclick="downloadPoster()" class="w-full py-3 px-4 bg-[#fcc70b] hover:bg-[#e5b307] text-slate-950 font-black rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm tracking-wide">
+            <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            DOWNLOAD POSTER (PNG)
           </button>
-          <button onclick="copyToClipboard()" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-xl transition flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-            Salin ke Clipboard (Terus Paste di WhatsApp)
-          </button>
-          <p id="statusMsg" class="text-center text-xs text-emerald-400 font-medium min-h-[16px]"></p>
-        </div>
-
-      </div>
-
-      <!-- Panel Kanan: Pratonton Langsung -->
-      <div class="lg:col-span-7 flex flex-col items-center">
-        <div class="w-full flex justify-between items-center mb-3 px-1">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Pratonton Poster (Boleh Drag Nombor)</span>
-          <span class="text-[11px] text-slate-500">Klik & seret nombor untuk ubah tempat</span>
-        </div>
-
-        <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center select-none" id="previewContainer">
-          <!-- Canvas untuk render visual -->
-          <canvas id="posterCanvas" class="w-full h-auto cursor-crosshair block"></canvas>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    // State Aplikasi
-    let currentImage = null;
-    let isDragging = false;
-
-    const startDateEl = document.getElementById('startDate');
-    const targetDateEl = document.getElementById('targetDate');
-    const daysBadge = document.getElementById('daysCountBadge');
-    const posX = document.getElementById('posX');
-    const posY = document.getElementById('posY');
-    const posXVal = document.getElementById('posXVal');
-    const posYVal = document.getElementById('posYVal');
-    const fontSize = document.getElementById('fontSize');
-    const fontSizeVal = document.getElementById('fontSizeVal');
-    const fontSelect = document.getElementById('fontSelect');
-    const textColor = document.getElementById('textColor');
-    const colorHex = document.getElementById('colorHex');
-    const addPrefix = document.getElementById('addPrefix');
-    const canvas = document.getElementById('posterCanvas');
-    const ctx = canvas.getContext('2d');
-    const statusMsg = document.getElementById('statusMsg');
-
-    function init() {
-      setTodayDate();
-      generateDefaultPoster();
-      attachEvents();
-    }
-
-    function setTodayDate() {
-      const today = new Date();
-      const yr = today.getFullYear();
-      const mo = String(today.getMonth() + 1).padStart(2, '0');
-      const da = String(today.getDate()).padStart(2, '0');
-      startDateEl.value = `${yr}-${mo}-${da}`;
-      render();
-    }
-
-    function calculateDiff() {
-      if (!startDateEl.value || !targetDateEl.value) return 0;
-      const start = new Date(startDateEl.value + 'T00:00:00');
-      const target = new Date(targetDateEl.value + 'T00:00:00');
-      const diffTime = target - start;
-      return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    }
-
-    function generateDefaultPoster() {
-      const tempCanvas = document.createElement('canvas');
-      tempCanvas.width = 1080;
-      tempCanvas.height = 1350; // Format 4:5 Portrait
-      const tCtx = tempCanvas.getContext('2d');
-
-      // Gradient background
-      const grad = tCtx.createLinearGradient(0, 0, 1080, 1350);
-      grad.addColorStop(0, '#0f172a');
-      grad.addColorStop(0.5, '#1e1b4b');
-      grad.addColorStop(1, '#090d16');
-      tCtx.fillStyle = grad;
-      tCtx.fillRect(0, 0, 1080, 1350);
-
-      // Frame sempadan
-      tCtx.strokeStyle = 'rgba(45, 212, 191, 0.35)';
-      tCtx.lineWidth = 14;
-      tCtx.strokeRect(50, 50, 980, 1250);
-
-      // Tajuk poster
-      tCtx.fillStyle = '#ffffff';
-      tCtx.font = '900 64px Montserrat, sans-serif';
-      tCtx.textAlign = 'center';
-      tCtx.fillText('COUNTDOWN MENUJU', 540, 220);
-
-      tCtx.fillStyle = '#2dd4bf';
-      tCtx.font = '800 48px Montserrat, sans-serif';
-      tCtx.fillText('5 DISEMBER 2026', 540, 300);
-
-      // Kotak tempat nombor
-      tCtx.fillStyle = 'rgba(255, 255, 255, 0.05)';
-      tCtx.roundRect(140, 480, 800, 460, 30);
-      tCtx.fill();
-      tCtx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-      tCtx.lineWidth = 4;
-      tCtx.roundRect(140, 480, 800, 460, 30);
-      tCtx.stroke();
-
-      // Footer
-      tCtx.fillStyle = '#94a3b8';
-      tCtx.font = '600 32px Inter, sans-serif';
-      tCtx.fillText('Simpan Tarikh & Bersiap Sedia!', 540, 1150);
-
-      const img = new Image();
-      img.onload = () => {
-        currentImage = img;
-        render();
-      };
-      img.src = tempCanvas.toDataURL('image/png');
-    }
-
-    function render() {
-      if (!currentImage) return;
-
-      canvas.width = currentImage.width;
-      canvas.height = currentImage.height;
-
-      // Lukis imej latar
-      ctx.drawImage(currentImage, 0, 0);
-
-      const diff = calculateDiff();
-      daysBadge.innerText = diff;
-
-      // Sedia teks
-      let displayText = '';
-      if (diff > 0) {
-        displayText = addPrefix.checked ? `HARI ${diff}` : `${diff}`;
-      } else if (diff === 0) {
-        displayText = 'HARI INI!';
-      } else {
-        displayText = 'SELESAI';
-      }
-
-      // Format lukisan teks
-      const pxX = (parseFloat(posX.value) / 100) * canvas.width;
-      const pxY = (parseFloat(posY.value) / 100) * canvas.height;
-      const scaledFontSize = (parseInt(fontSize.value) / 100) * (canvas.width * 0.16);
-
-      ctx.save();
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.font = `900 ${scaledFontSize}px ${fontSelect.value}, sans-serif`;
-      
-      // Shadow teks
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
-      ctx.shadowBlur = 18;
-      ctx.shadowOffsetX = 4;
-      ctx.shadowOffsetY = 6;
-
-      ctx.fillStyle = textColor.value;
-      ctx.fillText(displayText, pxX, pxY);
-      ctx.restore();
-    }
-
-    function attachEvents() {
-      // Input listeners
-      [startDateEl, targetDateEl, fontSelect, addPrefix].forEach(el => {
-        el.addEventListener('change', render);
-      });
-
-      posX.addEventListener('input', (e) => {
-        posXVal.innerText = `${e.target.value}%`;
-        render();
-      });
-
-      posY.addEventListener('input', (e) => {
-        posYVal.innerText = `${e.target.value}%`;
-        render();
-      });
-
-      fontSize.addEventListener('input', (e) => {
-        fontSizeVal.innerText = `${e.target.value}px`;
-        render();
-      });
-
-      textColor.addEventListener('input', (e) => {
-        colorHex.innerText = e.target.value.toUpperCase();
-        render();
-      });
-
-      // Upload listener
-      document.getElementById('posterUpload').addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-          document.getElementById('fileName').innerText = `Fail: ${file.name}`;
-          const reader = new FileReader();
-          reader.onload = function(evt) {
-            const img = new Image();
-            img.onload = () => {
-              currentImage = img;
-              render();
-            };
-            img.src = evt.target.result;
-          };
-          reader.readAsDataURL(file);
-        }
-      });
-
-      // Mouse Drag support on canvas
-      canvas.addEventListener('mousedown', () => isDragging = true);
-      window.addEventListener('mouseup', () => isDragging = false);
-      canvas.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const rect = canvas.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        const pctX = Math.round((mouseX / rect.width) * 100);
-        const pctY = Math.round((mouseY / rect.height) * 100);
-
-        posX.value = Math.max(0, Math.min(100, pctX));
-        posY.value = Math.max(0, Math.min(100, pctY));
-        posXVal.innerText = `${posX.value}%`;
-        posYVal.innerText = `${posY.value}%`;
-
-        render();
-      });
-    }
-
-    function downloadPoster() {
-      const link = document.createElement('a');
-      const diff = calculateDiff();
-      link.download = `countdown-hari-${diff}-poster.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-
-      showStatus("Poster berjaya dimuat turun!");
-    }
-
-    async function copyToClipboard() {
-      try {
-        canvas.toBlob(async (blob) => {
-          const item = new ClipboardItem({ "image/png": blob });
-          await navigator.clipboard.write([item]);
-          showStatus("Imej disalin! Boleh terus Paste (Ctrl+V) ke WhatsApp Web.");
-        });
-      } catch (err) {
-        showStatus("Pelayar web ini perlukan kebenaran clipboard.");
-      }
-    }
-
-    function showStatus(text) {
-      statusMsg.innerText = text;
-      setTimeout(() => {
-        statusMsg.innerText = "";
-      }, 4000);
-    }
-
-    init();
-  </script>
-</body>
-</html>
+          <button onclick="copyToClipboard()" class="w-full
+            
