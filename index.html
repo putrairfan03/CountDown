@@ -9,44 +9,44 @@
   <!-- Google Fonts: Bebas Neue & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;900&family=Oswald:wght@700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
 
   <style>
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen py-8 px-4 font-inter">
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen py-8 px-4 font-inter">
 
   <div class="max-w-6xl mx-auto">
     <!-- Header -->
     <header class="mb-8 text-center sm:text-left border-b border-slate-800 pb-5 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#fcc70b] font-bebas tracking-wide">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#fcc70b] font-bebas tracking-wider">
           Countdown Poster Generator
         </h1>
-        <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Font Bebas Neue • Warna #fcc70b • Sasaran 5 Disember 2026</p>
+        <p class="text-xs sm:text-sm text-slate-400 mt-0.5">X: 83% • Y: 20% • Bebas Neue • #FCC70B • Sasaran 5 Disember 2026</p>
       </div>
-      <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full text-xs text-slate-300">
+      <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3.5 py-1.5 rounded-full text-xs text-slate-300">
         <span class="w-2.5 h-2.5 rounded-full bg-[#fcc70b] animate-pulse"></span>
-        GitHub Pages Ready
+        Tetapan Terkunci Siap Sedia
       </div>
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- Panel Kiri: Tetapan & Kawalan -->
-      <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-5">
+      <div class="lg:col-span-5 bg-[#0f172a]/95 border border-slate-800 p-6 rounded-2xl shadow-2xl space-y-5">
         
         <!-- 1. Muat Naik Poster Canva -->
         <div class="space-y-2">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">1. Poster Canva (Kosongkan Nombor Hari)</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">1. Poster Canva (Tanpa Nombor)</label>
           <input type="file" id="posterUpload" accept="image/*" class="hidden">
-          <button onclick="document.getElementById('posterUpload').click()" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 border border-dashed border-slate-600 rounded-xl text-sm font-medium transition flex items-center justify-center gap-2 text-slate-200">
-            <svg class="w-4 h-4 text-[#fcc70b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          <button onclick="document.getElementById('posterUpload').click()" class="w-full py-2.5 px-4 bg-slate-800/80 hover:bg-slate-700 border border-dashed border-slate-600 rounded-xl text-sm font-medium transition flex items-center justify-center gap-2 text-slate-200">
+            <svg class="w-4 h-4 text-[#fcc70b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
             Muat Naik Poster dari Device
           </button>
-          <p id="fileName" class="text-[11px] text-slate-500 truncate">Menggunakan poster pratonton lalai.</p>
+          <p id="fileName" class="text-[11px] text-slate-500 truncate">Menggunakan poster template lalai.</p>
         </div>
 
         <!-- 2. Tetapan Tarikh -->
@@ -56,72 +56,48 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <span class="text-xs text-slate-400 block mb-1">Tarikh Mula / Harini:</span>
-              <input type="date" id="startDate" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
+              <input type="date" id="startDate" class="w-full bg-[#0b0f19] border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
             </div>
             <div>
               <span class="text-xs text-slate-400 block mb-1">Tarikh Akhir (Due):</span>
-              <input type="date" id="targetDate" value="2026-12-05" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
+              <input type="date" id="targetDate" value="2026-12-05" class="w-full bg-[#0b0f19] border border-slate-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-[#fcc70b]">
             </div>
           </div>
 
           <div class="flex items-center justify-between pt-1">
-            <button onclick="setTodayDate()" class="text-xs text-[#fcc70b] hover:underline font-semibold">Set ke Hari Ini</button>
-            <div class="text-xs text-slate-300 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">
-              Baki: <span id="daysCountBadge" class="font-bold text-[#fcc70b] font-bebas text-base">0</span> Hari
+            <button onclick="setTodayDate()" class="text-xs text-[#fcc70b] hover:underline font-semibold">Set ke Tarikh Harini</button>
+            <div class="text-xs text-slate-300 bg-slate-900/90 px-3 py-1 rounded-md border border-slate-800">
+              Baki: <span id="daysCountBadge" class="font-bold text-[#fcc70b] font-bebas text-lg leading-none">0</span> Hari
             </div>
           </div>
         </div>
 
-        <!-- 3. Format Nombor & Kedudukan -->
+        <!-- 3. KEDUDUKAN & RUPA NOMBOR (Kekalkan Setting Pilihan) -->
         <div class="space-y-4 pt-3 border-t border-slate-800">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">3. Kedudukan & Saiz Nombor</label>
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-200">3. KEDUDUKAN & RUPA NOMBOR</label>
+            <button onclick="resetToPreset()" class="text-[11px] text-slate-400 hover:text-[#fcc70b] underline">Reset ke Setting Asal</button>
+          </div>
           
-          <!-- Slider Kedudukan -->
-          <div class="space-y-2">
-            <div class="flex justify-between text-xs text-slate-400">
+          <!-- Slider Kedudukan Mendatar X (Default: 83%) -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs text-slate-300 font-medium">
               <span>Posisi Mendatar (X)</span>
-              <span id="posXVal">50%</span>
+              <span id="posXVal" class="text-teal-400 font-semibold">83%</span>
             </div>
-            <input type="range" id="posX" min="0" max="100" value="50" class="w-full accent-[#fcc70b]">
-
-            <div class="flex justify-between text-xs text-slate-400 pt-1">
-              <span>Posisi Menegak (Y)</span>
-              <span id="posYVal">52%</span>
-            </div>
-            <input type="range" id="posY" min="0" max="100" value="52" class="w-full accent-[#fcc70b]">
+            <input type="range" id="posX" min="0" max="100" value="83" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-400">
           </div>
 
-          <!-- Saiz Font & Warna -->
+          <!-- Slider Kedudukan Menegak Y (Default: 20%) -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs text-slate-300 font-medium">
+              <span>Posisi Menegak (Y)</span>
+              <span id="posYVal" class="text-teal-400 font-semibold">20%</span>
+            </div>
+            <input type="range" id="posY" min="0" max="100" value="20" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-400">
+          </div>
+
+          <!-- Font & Warna Angka -->
           <div class="grid grid-cols-2 gap-3 pt-2">
             <div>
-              <div class="flex justify-between text-xs text-slate-400 mb-1">
-                <span>Saiz Teks</span>
-                <span id="fontSizeVal">110px</span>
-              </div>
-              <input type="range" id="fontSize" min="20" max="250" value="110" class="w-full accent-[#fcc70b]">
-            </div>
-            <div>
-              <span class="text-xs text-slate-400 block mb-1">Warna Angka</span>
-              <div class="flex items-center gap-2">
-                <input type="color" id="textColor" value="#fcc70b" class="w-9 h-8 rounded cursor-pointer bg-transparent border-0">
-                <span id="colorHex" class="text-xs font-mono font-bold text-[#fcc70b] uppercase">#FCC70B</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 text-xs text-slate-300">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" id="addPrefix" class="accent-[#fcc70b]">
-              <span>Sertakan teks "HARI" di depan</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Butang Eksport -->
-        <div class="pt-4 border-t border-slate-800 space-y-2.5">
-          <button id="downloadBtn" onclick="downloadPoster()" class="w-full py-3 px-4 bg-[#fcc70b] hover:bg-[#e5b307] text-slate-950 font-black rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm tracking-wide">
-            <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            DOWNLOAD POSTER (PNG)
-          </button>
-          <button onclick="copyToClipboard()" class="w-full
-            
+              <span class="
